@@ -761,10 +761,7 @@ get_conversion_path (PathContext *pc,
 
           fpi.source = (Babl*) babl_list_get_first (pc->current_path)->conversion.source;
           fpi.destination = pc->to_format;
-
-          printf ("entering gpi\n");
           get_path_instrumentation (&fpi, pc->current_path, &path_cost, &ref_cost, &path_error);
-          printf ("gpi ok\n");
           if(debug_conversions && current_length == 1)
             fprintf (stderr, "%s  error:%f cost:%f  \n",
                  babl_get_name (pc->current_path->items[0]), path_error, path_cost);

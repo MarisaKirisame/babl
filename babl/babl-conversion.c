@@ -487,8 +487,8 @@ babl_conversion_error (BablConversion *conversion)
       conversion->error = 0.0000042;
     }
 
-  source                      = babl_calloc (test_pixels+1, fmt_source->format.bytes_per_pixel);
-                                                 /* +1 is masking valgrind Invalid read of 16
+  source                      = babl_calloc (test_pixels+2, fmt_source->format.bytes_per_pixel);
+                                                 /* +2 is masking valgrind Invalid read of 16
                                                   *    false positives */
   destination                 = babl_calloc (test_pixels, fmt_destination->format.bytes_per_pixel);
   ref_destination             = babl_calloc (test_pixels, fmt_destination->format.bytes_per_pixel);
