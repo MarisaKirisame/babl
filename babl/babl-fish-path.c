@@ -1487,14 +1487,14 @@ process_conversion_path (BablList   *path,
       long j;
 
       void *temp_buffer = align_16 (alloca (MIN(n, MAX_BUFFER_SIZE) *
-                                    sizeof (double) * 5 + 16));
+                                    sizeof (double) * 5 + 32));
       void *temp_buffer2 = NULL;
 
       if (conversions > 2)
         {
           /* We'll need one more auxiliary buffer */
           temp_buffer2 = align_16 (alloca (MIN(n, MAX_BUFFER_SIZE) *
-                                   sizeof (double) * 5 + 16));
+                                   sizeof (double) * 5 + 32));
         }
 
       for (j = 0; j < n; j+= MAX_BUFFER_SIZE)
